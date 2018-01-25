@@ -12,6 +12,9 @@
 		23BC3E20201825C900881485 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BC3E1E201825C900881485 /* Main.storyboard */; };
 		23BC3E22201825C900881485 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23BC3E21201825C900881485 /* Assets.xcassets */; };
 		23BC3E25201825C900881485 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BC3E23201825C900881485 /* LaunchScreen.storyboard */; };
+		23FBDDEA201977DA00059F30 /* TestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBDDE9201977DA00059F30 /* TestScreen.swift */; };
+		23FBDDEC20197DE500059F30 /* WarningsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBDDEB20197DE500059F30 /* WarningsScreen.swift */; };
+		23FBDDEE2019840300059F30 /* AlertsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBDDED2019840300059F30 /* AlertsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		23BC3E21201825C900881485 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23BC3E24201825C900881485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23BC3E26201825C900881485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23FBDDE9201977DA00059F30 /* TestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreen.swift; sourceTree = "<group>"; };
+		23FBDDEB20197DE500059F30 /* WarningsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningsScreen.swift; sourceTree = "<group>"; };
+		23FBDDED2019840300059F30 /* AlertsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,9 @@
 				23BC3E1A201825C900881485 /* AppDelegate.swift */,
 				23BC3E1C201825C900881485 /* ViewController.swift */,
 				23BC3E1E201825C900881485 /* Main.storyboard */,
+				23FBDDE9201977DA00059F30 /* TestScreen.swift */,
+				23FBDDED2019840300059F30 /* AlertsScreen.swift */,
+				23FBDDEB20197DE500059F30 /* WarningsScreen.swift */,
 				23BC3E21201825C900881485 /* Assets.xcassets */,
 				23BC3E23201825C900881485 /* LaunchScreen.storyboard */,
 				23BC3E26201825C900881485 /* Info.plist */,
@@ -136,6 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23FBDDEC20197DE500059F30 /* WarningsScreen.swift in Sources */,
+				23FBDDEE2019840300059F30 /* AlertsScreen.swift in Sources */,
+				23FBDDEA201977DA00059F30 /* TestScreen.swift in Sources */,
 				23BC3E1D201825C900881485 /* ViewController.swift in Sources */,
 				23BC3E1B201825C900881485 /* AppDelegate.swift in Sources */,
 			);

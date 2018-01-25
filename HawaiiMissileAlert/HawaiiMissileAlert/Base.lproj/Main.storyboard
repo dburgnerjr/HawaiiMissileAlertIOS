@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
-        <!--View Controller-->
+        <!--Alerts Screen-->
         <scene sceneID="p7I-nx-ZYk">
             <objects>
-                <viewController id="eFl-Ma-jyq" sceneMemberID="viewController">
+                <viewController id="eFl-Ma-jyq" customClass="AlertsScreen" customModule="HawaiiMissileAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oEU-rr-YYq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,6 +93,9 @@
                                 <state key="normal" title="Amber Alert (CAE) - Kauai County Only">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnAmberAlertKauai:" destination="eFl-Ma-jyq" eventType="touchUpInside" id="z7W-8P-gMH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="73q-fa-WJE">
                                 <rect key="frame" x="91" y="251" width="192" height="65"/>
@@ -102,6 +105,9 @@
                                 <state key="normal" title="Amber Alert (CAE) - Statewide">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnAmberAlertState:" destination="eFl-Ma-jyq" eventType="touchUpInside" id="f16-zY-Fnz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1ys-0z-a3S">
                                 <rect key="frame" x="91" y="338" width="192" height="65"/>
@@ -111,6 +117,9 @@
                                 <state key="normal" title="PACOM (CDW) - State Only">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnPACOMAlert:" destination="eFl-Ma-jyq" eventType="touchUpInside" id="8X8-mv-VDM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fky-uh-cc7">
                                 <rect key="frame" x="91" y="547" width="192" height="50"/>
@@ -128,15 +137,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="eZH-0f-yBo"/>
                     </view>
+                    <connections>
+                        <outlet property="btnAmberAlertKauai" destination="Ywv-Lz-eko" id="xfV-Iz-eCr"/>
+                        <outlet property="btnAmberAlertState" destination="73q-fa-WJE" id="QKs-5r-yar"/>
+                        <outlet property="btnPACOMState" destination="1ys-0z-a3S" id="yIg-Nc-t2c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RaX-CT-qbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="118.29085457271366"/>
         </scene>
-        <!--View Controller-->
+        <!--Test Screen-->
         <scene sceneID="QgC-Vv-VQL">
             <objects>
-                <viewController id="Q3E-wl-al7" sceneMemberID="viewController">
+                <viewController id="Q3E-wl-al7" customClass="TestScreen" customModule="HawaiiMissileAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YFU-Dv-MJr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,6 +170,9 @@
                                 <state key="normal" title="1. Test Message">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnTestMessage:" destination="Q3E-wl-al7" eventType="touchUpInside" id="7NP-RU-Zec"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-5R-Lzi">
                                 <rect key="frame" x="98" y="268" width="192" height="65"/>
@@ -165,6 +182,9 @@
                                 <state key="normal" title="DRILL - PACOM (CDW) - State Only">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnDrillPACOM:" destination="Q3E-wl-al7" eventType="touchUpInside" id="Jg3-j4-RsT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kJ0-tz-pxJ">
                                 <rect key="frame" x="98" y="353" width="192" height="65"/>
@@ -174,6 +194,9 @@
                                 <state key="normal" title="Amber Alert Demo Test">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnAmberAlertDemo:" destination="Q3E-wl-al7" eventType="touchUpInside" id="sZQ-qW-2rq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ho2-dj-GEz">
                                 <rect key="frame" x="98" y="547" width="192" height="50"/>
@@ -191,15 +214,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="pyj-iO-zAf"/>
                     </view>
+                    <connections>
+                        <outlet property="btnAmberAlertDemo" destination="kJ0-tz-pxJ" id="eib-eo-rdp"/>
+                        <outlet property="btnDrillPACOM" destination="2ho-5R-Lzi" id="e34-hm-gKf"/>
+                        <outlet property="btnTestMessage" destination="qrz-Ry-FZa" id="DQy-Ap-NbC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w97-DB-khX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="121" y="810"/>
         </scene>
-        <!--View Controller-->
+        <!--Warnings Screen-->
         <scene sceneID="Gje-uN-mqX">
             <objects>
-                <viewController id="HZU-c6-zp8" sceneMemberID="viewController">
+                <viewController id="HZU-c6-zp8" customClass="WarningsScreen" customModule="HawaiiMissileAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5RW-YE-Vki">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,6 +247,10 @@
                                 <state key="normal" title="Tsunami Warning (CEM) - State Only">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnTsunamiWarning:" destination="0hJ-tR-8X9" eventType="touchUpInside" id="JLe-cV-Roq"/>
+                                    <action selector="btnTsunamiWarning:" destination="HZU-c6-zp8" eventType="touchUpInside" id="fmJ-sz-8P0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Tc4-Vy-sxV">
                                 <rect key="frame" x="91" y="268" width="192" height="65"/>
@@ -228,6 +260,10 @@
                                 <state key="normal" title="High Surf Warning North Shores">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnHighSurfWarning:" destination="HZU-c6-zp8" eventType="touchUpInside" id="DhR-Tn-1or"/>
+                                    <action selector="btnHighSurfWarning:" destination="0hJ-tR-8X9" eventType="touchUpInside" id="cSV-SM-VDX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hRb-Bd-q3S">
                                 <rect key="frame" x="91" y="353" width="192" height="65"/>
@@ -237,6 +273,11 @@
                                 <state key="normal" title="Landslide - Hana Road Closure">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnLandsildeHanaRd:" destination="0hJ-tR-8X9" eventType="touchUpInside" id="zgA-CY-OFK"/>
+                                    <action selector="btnLandslideHanaRd:" destination="0hJ-tR-8X9" eventType="touchUpInside" id="KF4-Z1-yyo"/>
+                                    <action selector="btnLandslideHanaRd:" destination="HZU-c6-zp8" eventType="touchUpInside" id="X2o-Sd-upt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfY-UP-sgW">
                                 <rect key="frame" x="91" y="547" width="192" height="50"/>
@@ -254,10 +295,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="PrT-d6-odI"/>
                     </view>
+                    <connections>
+                        <outlet property="btnHighSurfWarning" destination="Tc4-Vy-sxV" id="wFF-A9-aGh"/>
+                        <outlet property="btnLandslideHanaRd" destination="hRb-Bd-q3S" id="tGg-IK-Jcg"/>
+                        <outlet property="btnTsunamiWarning" destination="4Ch-BP-yP8" id="tCB-Vo-W7J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="524-Ls-ikf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0hJ-tR-8X9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="988" y="810"/>
+            <point key="canvasLocation" x="988" y="809.14542728635683"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
