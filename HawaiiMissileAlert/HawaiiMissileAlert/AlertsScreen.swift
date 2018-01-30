@@ -31,26 +31,60 @@ class AlertsScreen : UIViewController {
     
     
     @IBAction func btnAmberAlertKauai(_ sender: Any) {
-//        confirmationMessageController = UIAlertController(title: "Confirmation", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
-//        confirmationMessageController.addAction(UIAlertAction(title: "OK", style:
-//            UIAlertActionStyle.default, handler: nil))
-//        confirmationMessageController.addAction(UIAlertAction(title: "Cancel", style:
-//            UIAlertActionStyle.default, handler: nil))
-//        present(confirmationMessageController, animated: true, completion: nil)
+        confirmationMessageController = UIAlertController(title: "Confirmation", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        confirmationMessageController.addAction(UIAlertAction(title: "OK", style:
+            UIAlertActionStyle.default, handler: { action in self.actionAmberAlertKauai()
+        }))
+        confirmationMessageController.addAction(UIAlertAction(title: "Cancel", style:
+            UIAlertActionStyle.default, handler: nil))
+        present(confirmationMessageController, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnAmberAlertState(_ sender: Any) {
+        confirmationMessageController = UIAlertController(title: "Confirmation", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        confirmationMessageController.addAction(UIAlertAction(title: "OK", style:
+            UIAlertActionStyle.default, handler: { action in self.actionAmberAlertState()
+        }))
+        confirmationMessageController.addAction(UIAlertAction(title: "Cancel", style:
+            UIAlertActionStyle.default, handler: nil))
+        present(confirmationMessageController, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnPACOMAlert(_ sender: Any) {
+        confirmationMessageController = UIAlertController(title: "Confirmation", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        confirmationMessageController.addAction(UIAlertAction(title: "OK", style:
+            UIAlertActionStyle.default, handler: { action in self.actionPACOMAlert()
+        }))
+        confirmationMessageController.addAction(UIAlertAction(title: "Cancel", style:
+            UIAlertActionStyle.default, handler: nil))
+        present(confirmationMessageController, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnBMDFalseAlarm(_ sender: Any) {
+        confirmationMessageController = UIAlertController(title: "Confirmation", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        confirmationMessageController.addAction(UIAlertAction(title: "OK", style:
+            UIAlertActionStyle.default, handler: { action in self.actionBMDFalseAlarm()
+        }))
+        confirmationMessageController.addAction(UIAlertAction(title: "Cancel", style:
+            UIAlertActionStyle.default, handler: nil))
+        present(confirmationMessageController, animated: true, completion: nil)
+    }
+    
+    func actionAmberAlertKauai() {
         testMessageController = UIAlertController(title: "Amber Alert - Kauai County", message: strAmberAlertKauai, preferredStyle: UIAlertControllerStyle.alert)
         testMessageController.addAction(UIAlertAction(title: "OK", style:
             UIAlertActionStyle.default, handler: nil))
         present(testMessageController, animated: true, completion: nil)
     }
-    
-    @IBAction func btnAmberAlertState(_ sender: Any) {
+
+    func actionAmberAlertState() {
         testMessageController = UIAlertController(title: "Amber Alert - Statewide", message: strAmberAlertState, preferredStyle: UIAlertControllerStyle.alert)
         testMessageController.addAction(UIAlertAction(title: "OK", style:
             UIAlertActionStyle.default, handler: nil))
         present(testMessageController, animated: true, completion: nil)
     }
-    
-    @IBAction func btnPACOMAlert(_ sender: Any) {
+
+    func actionPACOMAlert() {
         testMessageController = UIAlertController(title: "MISSILE ALERT", message: strPACOMState, preferredStyle: UIAlertControllerStyle.alert)
         testMessageController.addAction(UIAlertAction(title: "OK", style:
             UIAlertActionStyle.default, handler: nil))
@@ -58,7 +92,7 @@ class AlertsScreen : UIViewController {
         btnBMDFalseAlarm.isHidden = false
     }
     
-    @IBAction func btnBMDFalseAlarm(_ sender: Any) {
+    func actionBMDFalseAlarm() {
         testMessageController = UIAlertController(title: "BMD FALSE ALARM", message: strBMDFalseAlarm, preferredStyle: UIAlertControllerStyle.alert)
         testMessageController.addAction(UIAlertAction(title: "OK", style:
             UIAlertActionStyle.default, handler: nil))
