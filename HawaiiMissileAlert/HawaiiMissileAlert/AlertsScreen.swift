@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class AlertsScreen : UIViewController {
+
+class AlertsScreen : UIViewController, GADBannerViewDelegate {
     
     @IBOutlet weak var btnAmberAlertKauai: UIButton!
     @IBOutlet weak var btnAmberAlertState: UIButton!
     @IBOutlet weak var btnPACOMState: UIButton!
     @IBOutlet weak var btnBMDFalseAlarm: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
 
     var testMessageController: UIAlertController!
     var confirmationMessageController: UIAlertController!
@@ -27,9 +30,17 @@ class AlertsScreen : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         btnBMDFalseAlarm.isHidden = true
+        
+        bannerView.delegate = self
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        bannerView.adUnitID = "ca-app-pub-8379108590476103/5890272468"
+        bannerView.adSize = kGADAdSizeSmartBannerPortrait
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
+
     @IBAction func btnAmberAlertKauai(_ sender: Any) {
         confirmationMessageController = UIAlertController(title: "Confirmation", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
         confirmationMessageController.addAction(UIAlertAction(title: "OK", style:
@@ -99,4 +110,15 @@ class AlertsScreen : UIViewController {
         present(testMessageController, animated: true, completion: nil)
         btnBMDFalseAlarm.isHidden = true
     }
+    
+    // AdMob banner available
+    func adViewDidReceiveAd(_ view: GADBannerView) {
+        bannerView.isHidden = false
+    }
+    
+    // NO AdMob banner available
+    func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        bannerView.isHidden = true
+    }
+
 }

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class TestScreen: UIViewController {
+class TestScreen: UIViewController, GADBannerViewDelegate {
 
     @IBOutlet weak var btnTestMessage: UIButton!
     @IBOutlet weak var btnDrillPACOM: UIButton!
     @IBOutlet weak var btnAmberAlertDemo: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     let strTestMessage = "This is a test of the Hawaii Emergency Alert System.  This is only a test."
     let strDrillPACOM = "This is a drill.  Missile Alert!  Missiles inbound, seek shelter immediately."
@@ -22,8 +24,18 @@ class TestScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bannerView.delegate = self
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        bannerView.adUnitID = "ca-app-pub-8379108590476103/5890272468"
+        bannerView.adSize = kGADAdSizeSmartBannerPortrait
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
+    
     @IBAction func btnTestMessage(_ sender: Any) {
         testMessageController = UIAlertController(title: "Test Message", message: strTestMessage, preferredStyle: UIAlertControllerStyle.alert)
         testMessageController.addAction(UIAlertAction(title: "OK", style:
@@ -43,5 +55,15 @@ class TestScreen: UIViewController {
         testMessageController.addAction(UIAlertAction(title: "OK", style:
             UIAlertActionStyle.default, handler: nil))
         present(testMessageController, animated: true, completion: nil)
+    }
+    
+    // AdMob banner available
+    func adViewDidReceiveAd(_ view: GADBannerView) {
+        bannerView.isHidden = false
+    }
+    
+    // NO AdMob banner available
+    func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        bannerView.isHidden = true
     }
 }
