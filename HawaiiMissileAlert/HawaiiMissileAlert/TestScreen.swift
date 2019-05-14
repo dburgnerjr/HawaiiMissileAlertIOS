@@ -14,11 +14,13 @@ class TestScreen: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var btnTestMessage: UIButton!
     @IBOutlet weak var btnDrillPACOM: UIButton!
     @IBOutlet weak var btnAmberAlertDemo: UIButton!
+    @IBOutlet weak var btnVolcanicActivityTest: UIButton!
     @IBOutlet weak var bannerView: GADBannerView!
     
     let strTestMessage = "This is a test of the Hawaii Emergency Alert System.  This is only a test."
     let strDrillPACOM = "This is a drill.  Missile Alert!  Missiles inbound, seek shelter immediately."
     let strAmberAlert = "This is a drill.  Amber Alert!  Missing Child in Maui County, License Plate ABC 123."
+    let strVolcanicAlert = "This is a drill.  Volcanic eruption reported in Hawaii County. Please proceed with evacuation of the immediate area."
 
     var testMessageController: UIAlertController!
     
@@ -57,6 +59,13 @@ class TestScreen: UIViewController, GADBannerViewDelegate {
         present(testMessageController, animated: true, completion: nil)
     }
     
+    @IBAction func btnVolcanicActivityTest(_ sender: Any) {
+        testMessageController = UIAlertController(title: "Drill - Volcanic Activity", message: strVolcanicAlert, preferredStyle: UIAlertControllerStyle.alert)
+        testMessageController.addAction(UIAlertAction(title: "OK", style:
+            UIAlertActionStyle.default, handler: nil))
+        present(testMessageController, animated: true, completion: nil)
+    }
+
     // AdMob banner available
     func adViewDidReceiveAd(_ view: GADBannerView) {
         bannerView.isHidden = false

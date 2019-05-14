@@ -15,6 +15,7 @@ class AlertsScreen : UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var btnAmberAlertKauai: UIButton!
     @IBOutlet weak var btnAmberAlertState: UIButton!
     @IBOutlet weak var btnPACOMState: UIButton!
+    @IBOutlet weak var btnVolcanicActivity: UIButton!
     @IBOutlet weak var btnBMDFalseAlarm: UIButton!
     @IBOutlet weak var bannerView: GADBannerView!
 
@@ -25,6 +26,7 @@ class AlertsScreen : UIViewController, GADBannerViewDelegate {
     let strAmberAlertKauai = "Amber Alert!  Missing child reported in Kauai County.  License Plate ABC 123."
     let strAmberAlertState = "Amber Alert!  Missing child reported could be anywhere in state.  License Plate ABC 123."
     let strPACOMState = "Missile Alert!  Missiles inbound, seek shelter immediately."
+    let strVolcanicAlert = "Volcanic eruption reported in Hawaii County. Please proceed with evacuation of the immediate area."
     let strBMDFalseAlarm = "The Missile Alert was a false alarm."
 
     override func viewDidLoad() {
@@ -71,6 +73,16 @@ class AlertsScreen : UIViewController, GADBannerViewDelegate {
         present(confirmationMessageController, animated: true, completion: nil)
     }
     
+    @IBAction func btnVolcanicActivity(_ sender: Any) {
+        confirmationMessageController = UIAlertController(title: "Confirmation", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        confirmationMessageController.addAction(UIAlertAction(title: "OK", style:
+            UIAlertActionStyle.default, handler: { action in self.actionVolcanicActivity()
+        }))
+        confirmationMessageController.addAction(UIAlertAction(title: "Cancel", style:
+            UIAlertActionStyle.default, handler: nil))
+        present(confirmationMessageController, animated: true, completion: nil)
+    }
+    
     @IBAction func btnBMDFalseAlarm(_ sender: Any) {
         confirmationMessageController = UIAlertController(title: "Confirmation", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
         confirmationMessageController.addAction(UIAlertAction(title: "OK", style:
@@ -102,7 +114,13 @@ class AlertsScreen : UIViewController, GADBannerViewDelegate {
         present(testMessageController, animated: true, completion: nil)
         btnBMDFalseAlarm.isHidden = false
     }
-    
+    func actionVolcanicActivity() {
+        testMessageController = UIAlertController(title: "VOLCANIC ACTIVITY", message: strVolcanicAlert, preferredStyle: UIAlertControllerStyle.alert)
+        testMessageController.addAction(UIAlertAction(title: "OK", style:
+            UIAlertActionStyle.default, handler: nil))
+        present(testMessageController, animated: true, completion: nil)
+    }
+
     func actionBMDFalseAlarm() {
         testMessageController = UIAlertController(title: "BMD FALSE ALARM", message: strBMDFalseAlarm, preferredStyle: UIAlertControllerStyle.alert)
         testMessageController.addAction(UIAlertAction(title: "OK", style:
