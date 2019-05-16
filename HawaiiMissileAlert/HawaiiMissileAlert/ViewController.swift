@@ -6,10 +6,12 @@
 //  Copyright © 2018 Daniel Burgner. All rights reserved.
 //
 
-import GoogleMobileAds
+//import GoogleMobileAds
 import UIKit
 
-class ViewController: UIViewController, GADBannerViewDelegate {
+class ViewController: UIViewController {
+    
+    //var bannerView: GADBannerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,14 +20,14 @@ class ViewController: UIViewController, GADBannerViewDelegate {
 
 
     // AdMob banner available
-    func adViewDidReceiveAd(_ view: GADBannerView) {
-        bannerView.isHidden = false
-    }
+    //func adViewDidReceiveAd(_ view: GADBannerView) {
+        //bannerView.isHidden = false
+    //}
     
     // NO AdMob banner available
-    func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        bannerView.isHidden = true
-    }
+    //func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        //bannerView.isHidden = true
+    //}
 
 }
 

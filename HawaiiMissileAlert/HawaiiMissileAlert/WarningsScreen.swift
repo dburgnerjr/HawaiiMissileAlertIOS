@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import GoogleMobileAds
+//import GoogleMobileAds
 
-class WarningsScreen : UIViewController, GADBannerViewDelegate {
+class WarningsScreen : UIViewController {
     
     @IBOutlet weak var btnTsunamiWarning: UIButton!
     @IBOutlet weak var btnHighSurfWarning: UIButton!
     @IBOutlet weak var btnLandslideHanaRd: UIButton!
-    @IBOutlet weak var bannerView: GADBannerView!
+    //@IBOutlet weak var bannerView: GADBannerView!
     
     let strTsunamiWarning = "Tsunami inbound, seek shelter immediately."
     let strHighSurfWarning = "High surf warning in effect, all beaches affected are closed until further notice."
@@ -25,14 +25,14 @@ class WarningsScreen : UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView.delegate = self
+        //bannerView.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        bannerView.adUnitID = "ca-app-pub-8379108590476103/5890272468"
-        bannerView.adSize = kGADAdSizeSmartBannerPortrait
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+        //bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        //bannerView.adSize = kGADAdSizeSmartBannerPortrait
+        //bannerView.rootViewController = self
+        //bannerView.load(GADRequest())
     }
     
     @IBAction func btnTsunamiWarning(_ sender: Any) {
@@ -57,13 +57,13 @@ class WarningsScreen : UIViewController, GADBannerViewDelegate {
     }
     
     // AdMob banner available
-    func adViewDidReceiveAd(_ view: GADBannerView) {
-        bannerView.isHidden = false
-    }
+    //func adViewDidReceiveAd(_ view: GADBannerView) {
+        //bannerView.isHidden = false
+    //}
     
     // NO AdMob banner available
-    func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        bannerView.isHidden = true
-    }
+    //func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        //bannerView.isHidden = true
+    //}
 
 }

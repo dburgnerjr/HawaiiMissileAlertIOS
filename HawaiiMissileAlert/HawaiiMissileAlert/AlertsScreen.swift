@@ -7,17 +7,17 @@
 //
 
 import UIKit
-import GoogleMobileAds
+//import GoogleMobileAds
 
 
-class AlertsScreen : UIViewController, GADBannerViewDelegate {
+class AlertsScreen : UIViewController  {
     
     @IBOutlet weak var btnAmberAlertKauai: UIButton!
     @IBOutlet weak var btnAmberAlertState: UIButton!
     @IBOutlet weak var btnPACOMState: UIButton!
     @IBOutlet weak var btnVolcanicActivity: UIButton!
     @IBOutlet weak var btnBMDFalseAlarm: UIButton!
-    @IBOutlet weak var bannerView: GADBannerView!
+    //@IBOutlet weak var bannerView: GADBannerView!
 
     var testMessageController: UIAlertController!
     var confirmationMessageController: UIAlertController!
@@ -33,14 +33,14 @@ class AlertsScreen : UIViewController, GADBannerViewDelegate {
         super.viewDidLoad()
         btnBMDFalseAlarm.isHidden = true
         
-        bannerView.delegate = self
+        //bannerView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        bannerView.adUnitID = "ca-app-pub-8379108590476103/5890272468"
-        bannerView.adSize = kGADAdSizeSmartBannerPortrait
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+        //bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        //bannerView.adSize = kGADAdSizeSmartBannerPortrait
+        //bannerView.rootViewController = self
+        //bannerView.load(GADRequest())
     }
 
     @IBAction func btnAmberAlertKauai(_ sender: Any) {
@@ -78,8 +78,7 @@ class AlertsScreen : UIViewController, GADBannerViewDelegate {
         confirmationMessageController.addAction(UIAlertAction(title: "OK", style:
             UIAlertActionStyle.default, handler: { action in self.actionVolcanicActivity()
         }))
-        confirmationMessageController.addAction(UIAlertAction(title: "Cancel", style:
-            UIAlertActionStyle.default, handler: nil))
+        confirmationMessageController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
         present(confirmationMessageController, animated: true, completion: nil)
     }
     
@@ -114,6 +113,7 @@ class AlertsScreen : UIViewController, GADBannerViewDelegate {
         present(testMessageController, animated: true, completion: nil)
         btnBMDFalseAlarm.isHidden = false
     }
+    
     func actionVolcanicActivity() {
         testMessageController = UIAlertController(title: "VOLCANIC ACTIVITY", message: strVolcanicAlert, preferredStyle: UIAlertControllerStyle.alert)
         testMessageController.addAction(UIAlertAction(title: "OK", style:
@@ -130,13 +130,13 @@ class AlertsScreen : UIViewController, GADBannerViewDelegate {
     }
     
     // AdMob banner available
-    func adViewDidReceiveAd(_ view: GADBannerView) {
-        bannerView.isHidden = false
-    }
+    //func adViewDidReceiveAd(_ view: GADBannerView) {
+        //bannerView.isHidden = false
+    //}
     
     // NO AdMob banner available
-    func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        bannerView.isHidden = true
-    }
+    //func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        //bannerView.isHidden = true
+    //}
 
 }

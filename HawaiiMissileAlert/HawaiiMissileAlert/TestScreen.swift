@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import GoogleMobileAds
+//import GoogleMobileAds
 
-class TestScreen: UIViewController, GADBannerViewDelegate {
+class TestScreen: UIViewController {
 
     @IBOutlet weak var btnTestMessage: UIButton!
     @IBOutlet weak var btnDrillPACOM: UIButton!
     @IBOutlet weak var btnAmberAlertDemo: UIButton!
     @IBOutlet weak var btnVolcanicActivityTest: UIButton!
-    @IBOutlet weak var bannerView: GADBannerView!
+    //@IBOutlet weak var bannerView: GADBannerView!
     
     let strTestMessage = "This is a test of the Hawaii Emergency Alert System.  This is only a test."
     let strDrillPACOM = "This is a drill.  Missile Alert!  Missiles inbound, seek shelter immediately."
@@ -27,15 +27,15 @@ class TestScreen: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView.delegate = self
+        //bannerView.delegate = self
     }
 
     
     override func viewWillAppear(_ animated: Bool) {
-        bannerView.adUnitID = "ca-app-pub-8379108590476103/5890272468"
-        bannerView.adSize = kGADAdSizeSmartBannerPortrait
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+        //bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        //bannerView.adSize = kGADAdSizeSmartBannerPortrait
+        //bannerView.rootViewController = self
+        //bannerView.load(GADRequest())
     }
     
     @IBAction func btnTestMessage(_ sender: Any) {
@@ -67,12 +67,12 @@ class TestScreen: UIViewController, GADBannerViewDelegate {
     }
 
     // AdMob banner available
-    func adViewDidReceiveAd(_ view: GADBannerView) {
-        bannerView.isHidden = false
-    }
+    //func adViewDidReceiveAd(_ view: GADBannerView) {
+        //bannerView.isHidden = false
+    //}
     
     // NO AdMob banner available
-    func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        bannerView.isHidden = true
-    }
+    //func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        //bannerView.isHidden = true
+    //}
 }
